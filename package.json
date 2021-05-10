@@ -1,0 +1,20 @@
+{
+  "name": "myTodo-client",
+  "version": "1.0.0",
+  "description": "MyTodo의 Client Repository입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jswj30/myTodo-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jswj30/myTodo-client/issues"
+  },
+  "homepage": "https://github.com/jswj30/myTodo-client#readme"
+}
