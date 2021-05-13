@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jswj30/myTodo-client/issues"
   },
-  "homepage": "https://github.com/jswj30/myTodo-client#readme"
+  "homepage": "https://github.com/jswj30/myTodo-client#readme",
+  "dependencies": {
+    "react-router-dom": "^5.2.0"
+  }
 }
