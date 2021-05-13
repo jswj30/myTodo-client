@@ -1,9 +1,13 @@
 import React from "react";
+import { Route } from "react-router-dom";
+import Login from "./Login";
+import Main from "./Main";
 
 const App = () => {
   return (
     <div>
-      <h1>MyTodo</h1>
+      <Route path="/" component={Login} exact />
+      <Route path="/main" component={Main} />
     </div>
   );
 };
