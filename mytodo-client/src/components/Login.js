@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 // axios
 const axios = require("axios");
 
@@ -89,6 +91,9 @@ class Login extends Component {
           <button className="testButton" onClick={() => this.handleTestLogin()}>
             체험판 로그인
           </button>
+          <div>
+            <Link to="/signup">계정이 없으신가요?</Link>
+          </div>
         </div>
       </div>
     );
