@@ -31,7 +31,11 @@ class App extends Component {
           path="/"
           exact
           render={() =>
-            isLogin ? <Main /> : <Login handleIsLogin={this.handleIsLogin} />
+            isLogin === true ? (
+              <Main />
+            ) : (
+              <Login handleIsLogin={this.handleIsLogin} />
+            )
           }
         />
         <Route path="/signup" component={Signup} />
