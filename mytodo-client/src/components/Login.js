@@ -38,7 +38,7 @@ class Login extends Component {
         this.props.handleIsLogin();
       }
     } catch (err) {
-      alert(err);
+      alert("Email 및 Password가 일치하지 않습니다.");
     }
   };
 
