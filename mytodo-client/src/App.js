@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 
 // components
 import Login from "./components/Login";
@@ -21,27 +21,43 @@ class App extends Component {
     this.setState({
       isLogin: true,
     });
+    this.props.history.push("/");
   };
 
   render() {
     const { isLogin } = this.state;
+
     return (
       <div>
-        <Route
-          path="/"
-          exact
-          render={() =>
-            isLogin === true ? (
-              <Main />
-            ) : (
-              <Login handleIsLogin={this.handleIsLogin} />
-            )
-          }
-        />
-        <Route path="/signup" component={Signup} />
+        <Switch>
+          <Route path="/signup" component={Signup} />
+          <Route
+            path="/login"
+            render={() => <Login handleIsLogin={this.handleIsLogin} />}
+          />
+          <Route path="/main" component={Main} />
+          <Route
+            path="/"
+            render={() => {
+              if (isLogin) {
+                return <Redirect to="/main" />;
+              }
+              return <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            // path를 따로 정의하지 않으면 모든 상황에 렌더링됨
+            render={({ location }) => (
+              <div>
+                <h2>이 페이지는 존재하지 않습니다</h2>
+                <p>{location.pathname}</p>
+              </div>
+            )}
+          />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
