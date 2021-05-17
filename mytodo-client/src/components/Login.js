@@ -24,21 +24,27 @@ class Login extends Component {
   handleLogin = async () => {
     const { email, password } = this.state;
     try {
-      const resp = await axios({
-        method: "post",
-        url: "http://localhost:5000/signin",
-        data: {
-          email: email,
-          password: password,
-        },
-      });
-      if (!resp) {
-        alert("Email 및 Password가 일치하지 않습니다.");
+      // Email과 Password 중 하나라도 비어있다면 alert
+      if (!email || !password) {
+        alert("Email과 Password를 모두 입력하세요.");
       } else {
-        this.props.handleIsLogin();
+        const resp = await axios({
+          method: "post",
+          url: "http://localhost:5000/signin",
+          data: {
+            email: email,
+            password: password,
+          },
+        });
+
+        if (!resp) {
+          alert("Email 또는 Password가 일치하지 않습니다.");
+        } else {
+          this.props.handleIsLogin();
+        }
       }
     } catch (err) {
-      alert("Email 및 Password가 일치하지 않습니다.");
+      alert("Email 또는 Password가 일치하지 않습니다.");
     }
   };
 
@@ -59,7 +65,7 @@ class Login extends Component {
         this.props.handleIsLogin();
       }
     } catch (err) {
-      console.error(err);
+      alert(err);
     }
   };
 
