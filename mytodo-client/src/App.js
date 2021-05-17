@@ -19,7 +19,7 @@ class App extends Component {
 
   handleIsLogin = () => {
     this.setState({
-      isLogin: !this.state.isLogin,
+      isLogin: true,
     });
   };
 
