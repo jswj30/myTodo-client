@@ -17,6 +17,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    // this.handleIsLogin()
+  }
+
   handleIsLogin = () => {
     this.setState({
       isLogin: true,
