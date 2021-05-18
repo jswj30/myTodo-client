@@ -15,6 +15,7 @@ class App extends Component {
     super(props);
     this.state = {
       isLogin: false,
+      todoInfo: null,
     };
   }
 
@@ -29,6 +30,7 @@ class App extends Component {
         console.log(res);
         this.setState({
           isLogin: true,
+          todoInfo: res.data,
         });
         this.props.history.push("/");
       })
@@ -37,14 +39,13 @@ class App extends Component {
           this.setState({
             isLogin: false,
           });
-          alert("사용자의 Session을 찾을 수 없습니다.");
           this.props.history.push("/");
         }
       });
   };
 
   render() {
-    const { isLogin } = this.state;
+    const { isLogin, todoInfo } = this.state;
 
     return (
       <div>
@@ -54,7 +55,7 @@ class App extends Component {
             path="/login"
             render={() => <Login handleIsLogin={this.handleIsLogin} />}
           />
-          <Route path="/main" component={Main} />
+          <Route path="/main" render={() => <Main todoInfo={todoInfo} />} />
           <Route
             path="/"
             render={() => {
