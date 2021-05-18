@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // axios
 const axios = require("axios");
+axios.defaults.withCredentials = true;
 
 class Login extends Component {
   constructor(props) {

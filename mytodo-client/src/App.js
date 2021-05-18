@@ -7,7 +7,8 @@ import Main from "./components/Main";
 import Signup from "./components/Signup";
 
 // axios
-// const axios = require("axios");
+const axios = require("axios");
+axios.defaults.withCredentials = true;
 
 class App extends Component {
   constructor(props) {
@@ -18,14 +19,28 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.handleIsLogin()
+    this.handleIsLogin();
   }
 
   handleIsLogin = () => {
-    this.setState({
-      isLogin: true,
-    });
-    this.props.history.push("/");
+    return axios
+      .get("http://localhost:5000/gettodo")
+      .then((res) => {
+        console.log(res);
+        this.setState({
+          isLogin: true,
+        });
+        this.props.history.push("/");
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          this.setState({
+            isLogin: false,
+          });
+          alert("사용자의 Session을 찾을 수 없습니다.");
+          this.props.history.push("/");
+        }
+      });
   };
 
   render() {
