@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import TodoList from "./TodoList";
 
 // axios
@@ -11,14 +12,16 @@ class Main extends Component {
   }
 
   render() {
-    let info = this.props.todoInfo;
+    let { todoInfo, handleSignout } = this.props;
     return (
       <div>
         <h1>메인페이지</h1>
-        {info && info.map((todo, i) => <TodoList todo={todo} key={i} />)}
+        {todoInfo &&
+          todoInfo.map((todo, i) => <TodoList todo={todo} key={i} />)}
+        <button onClick={() => handleSignout()}>로그아웃</button>
       </div>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);

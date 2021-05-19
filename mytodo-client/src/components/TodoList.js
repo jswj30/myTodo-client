@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 // axios
 const axios = require("axios");
@@ -8,10 +9,9 @@ const TodoList = ({ todo }) => {
   const { id, content, startDate } = todo;
   return (
     <div>
-      {/* id content startDate */}
       id: {id} content: {content} startDate: {startDate}
     </div>
   );
 };
 
-export default TodoList;
+export default withRouter(TodoList);
