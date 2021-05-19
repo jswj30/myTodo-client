@@ -23,6 +23,7 @@ class App extends Component {
     this.handleIsLogin();
   }
 
+  // 로그인 후 todo 정보 받아오기
   handleIsLogin = () => {
     return axios
       .get("http://localhost:5000/gettodo")
@@ -44,6 +45,18 @@ class App extends Component {
       });
   };
 
+  // 로그아웃 기능
+  handleSignout = () => {
+    return axios.post("http://localhost:5000/signout/").then((result) => {
+      this.setState({
+        isLogin: false,
+        todoInfo: null,
+      });
+      // alert(result.data);
+      this.props.history.push("/");
+    });
+  };
+
   render() {
     const { isLogin, todoInfo } = this.state;
 
@@ -55,7 +68,12 @@ class App extends Component {
             path="/login"
             render={() => <Login handleIsLogin={this.handleIsLogin} />}
           />
-          <Route path="/main" render={() => <Main todoInfo={todoInfo} />} />
+          <Route
+            path="/main"
+            render={() => (
+              <Main todoInfo={todoInfo} handleSignout={this.handleSignout} />
+            )}
+          />
           <Route
             path="/"
             render={() => {
