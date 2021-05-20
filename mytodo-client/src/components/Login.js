@@ -41,6 +41,8 @@ class Login extends Component {
         if (!resp) {
           alert("Email 또는 Password가 일치하지 않습니다.");
         } else {
+          // console.log(resp.data);
+          this.props.handleUserId(resp.data.id);
           this.props.handleIsLogin();
         }
       }
@@ -63,6 +65,8 @@ class Login extends Component {
       if (!resp) {
         alert("Email 및 Password가 일치하지 않습니다.");
       } else {
+        // console.log(resp.data);
+        this.props.handleUserId(resp.data.id);
         this.props.handleIsLogin();
       }
     } catch (err) {
