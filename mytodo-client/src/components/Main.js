@@ -23,7 +23,22 @@ class Main extends Component {
 
   // todo 등록하기
   handleIputTodo = () => {
-    alert(this.state.inputTodo);
+    // alert("test");
+    return axios
+      .post("http://localhost:5000/posttodo", {
+        content: this.state.inputTodo,
+        userId: this.props.userId,
+      })
+      .then((res) => {
+        alert("Todo가 등록되었습니다.");
+        this.setState({
+          inputTodo: "",
+        });
+        this.props.handleIsLogin();
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   render() {

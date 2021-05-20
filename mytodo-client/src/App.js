@@ -15,6 +15,7 @@ class App extends Component {
     super(props);
     this.state = {
       isLogin: false,
+      userInfo: null,
       todoInfo: null,
     };
   }
@@ -45,6 +46,13 @@ class App extends Component {
       });
   };
 
+  // state.userId 변경
+  handleUserId = (e) => {
+    this.setState({
+      userId: e,
+    });
+  };
+
   // 로그아웃 기능
   handleSignout = () => {
     return axios.post("http://localhost:5000/signout/").then((result) => {
@@ -58,7 +66,7 @@ class App extends Component {
   };
 
   render() {
-    const { isLogin, todoInfo } = this.state;
+    const { isLogin, userId, todoInfo } = this.state;
 
     return (
       <div>
@@ -66,12 +74,22 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route
             path="/login"
-            render={() => <Login handleIsLogin={this.handleIsLogin} />}
+            render={() => (
+              <Login
+                handleUserId={this.handleUserId}
+                handleIsLogin={this.handleIsLogin}
+              />
+            )}
           />
           <Route
             path="/main"
             render={() => (
-              <Main todoInfo={todoInfo} handleSignout={this.handleSignout} />
+              <Main
+                todoInfo={todoInfo}
+                userId={userId}
+                handleIsLogin={this.handleIsLogin}
+                handleSignout={this.handleSignout}
+              />
             )}
           />
           <Route
