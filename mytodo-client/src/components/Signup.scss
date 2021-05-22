@@ -1,0 +1,76 @@
+.signup {
+  box-sizing: border-box;
+  border: 2px solid #2352a2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 450px;
+  position: relative;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #667fee;
+  box-shadow: 7px 7px 25px rgb(128, 128, 128);
+  color: #132b53;
+  .signup_title {
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    padding: 20px;
+    text-align: center;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 45px;
+  }
+  .signup_info {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Nanum Gothic Coding", monospace;
+    font-size: 20px;
+    font-weight: bold;
+    .signup_email {
+      // margin-top: 10px;
+    }
+    .signup_password {
+      margin-top: 5px;
+    }
+    .signup_name {
+      margin-top: 5px;
+    }
+    .signup_mobile {
+      margin-top: 5px;
+    }
+    .inputSignup {
+      width: 220px;
+      height: 20px;
+      border-radius: 5px;
+      font-size: 15px;
+      font-family: "Nanum Gothic Coding", monospace;
+    }
+  }
+  .signup_btns {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    .signupButton {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      font-family: "Nanum Gothic Coding", monospace;
+      color: #132b53;
+      font-weight: bold;
+    }
+    .goBackButton {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      font-family: "Nanum Gothic Coding", monospace;
+      color: #132b53;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import "./Signup.scss";
 
 class Signup extends Component {
   constructor(props) {
@@ -51,34 +52,45 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <div>Email</div>
-        <input
-          type="text"
-          placeholder="Email을 입력하세요."
-          onChange={this.handleInputInfo("email")}
-        />
-        <div>Password</div>
-        <input
-          type="password"
-          placeholder="Password를 입력하세요."
-          onChange={this.handleInputInfo("password")}
-        />
-        <div>Name</div>
-        <input
-          type="text"
-          placeholder="이름을 입력하세요."
-          onChange={this.handleInputInfo("name")}
-        />
-        <div>Mobile</div>
-        <input
-          type="text"
-          placeholder="전화번호를 입력하세요."
-          onChange={this.handleInputInfo("mobile")}
-        />
-        <div>
-          <button onClick={this.handleSignup}>회원가입</button>
-          <button onClick={this.handleGoBack}>뒤로</button>
+      <div className="signup">
+        <div className="signup_title">MyTodo</div>
+        <div className="signup_info">
+          <div className="signup_email">Email</div>
+          <input
+            className="inputSignup"
+            type="text"
+            placeholder="Email을 입력하세요."
+            onChange={this.handleInputInfo("email")}
+          />
+          <div className="signup_password">Password</div>
+          <input
+            className="inputSignup"
+            type="password"
+            placeholder="Password를 입력하세요."
+            onChange={this.handleInputInfo("password")}
+          />
+          <div className="signup_name">Name</div>
+          <input
+            className="inputSignup"
+            type="text"
+            placeholder="이름을 입력하세요."
+            onChange={this.handleInputInfo("name")}
+          />
+          <div className="signup_mobile">Mobile</div>
+          <input
+            className="inputSignup"
+            type="text"
+            placeholder="전화번호를 입력하세요."
+            onChange={this.handleInputInfo("mobile")}
+          />
+        </div>
+        <div className="signup_btns">
+          <button className="signupButton" onClick={this.handleSignup}>
+            회원가입
+          </button>
+          <button className="goBackButton" onClick={this.handleGoBack}>
+            뒤로
+          </button>
         </div>
       </div>
     );
