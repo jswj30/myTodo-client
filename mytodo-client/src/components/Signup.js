@@ -33,8 +33,12 @@ class Signup extends Component {
           mobile,
         },
       });
-      alert("회원가입이 완료되었습니다.");
-      this.props.history.push("/");
+      if (resp) {
+        alert("회원가입이 완료되었습니다.");
+        this.props.history.push("/");
+      } else {
+        alert("회원가입이 완료되지 않았습니다. 다시 시도해 주세요.");
+      }
     } catch (err) {
       alert(err);
     }
