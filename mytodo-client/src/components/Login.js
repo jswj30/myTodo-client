@@ -75,6 +75,13 @@ class Login extends Component {
     }
   };
 
+  // Enter누르면 로그인하기
+  onKeyLogin = (e) => {
+    if (e.key === "Enter") {
+      this.handleLogin();
+    }
+  };
+
   render() {
     return (
       <div className="login">
@@ -96,6 +103,7 @@ class Login extends Component {
               placeholder="Password를 입력하세요."
               onChange={this.handleInputValue("password")}
               className="inputPassword"
+              onKeyPress={this.onKeyLogin}
             />
           </div>
         </div>
