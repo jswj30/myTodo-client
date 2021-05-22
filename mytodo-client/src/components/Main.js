@@ -23,22 +23,25 @@ class Main extends Component {
 
   // todo 등록하기
   handleIputTodo = () => {
-    // alert("test");
-    return axios
-      .post("http://localhost:5000/posttodo", {
-        content: this.state.inputTodo,
-        userId: this.props.userId,
-      })
-      .then((res) => {
-        alert("Todo가 등록되었습니다.");
-        this.setState({
-          inputTodo: "",
+    if (this.props.userId) {
+      return axios
+        .post("http://localhost:5000/posttodo", {
+          content: this.state.inputTodo,
+          userId: this.props.userId,
+        })
+        .then((res) => {
+          alert("Todo가 등록되었습니다.");
+          this.setState({
+            inputTodo: "",
+          });
+          this.props.handleIsLogin();
+        })
+        .catch((err) => {
+          alert(err);
         });
-        this.props.handleIsLogin();
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    } else {
+      alert("Todo가 등록되지 않았습니다. 다시 로그인 후 Todo를 등록해 주세요.");
+    }
   };
 
   // Enter 누르면 todo 생성하기
