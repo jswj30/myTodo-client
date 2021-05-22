@@ -87,25 +87,25 @@ class Login extends Component {
             type="text"
             placeholder="Email을 입력하세요."
             onChange={this.handleInputValue("email")}
+            className="inputEmail"
           />
           <h3>Password</h3>
           <input
             type="password"
             placeholder="Password를 입력하세요."
             onChange={this.handleInputValue("password")}
+            className="inputPassword"
           />
         </div>
-        <div className="login_submit">
-          <button className="loginButton" onClick={() => this.handleLogin()}>
-            로그인
-          </button>
-          <button className="testButton" onClick={() => this.handleTestLogin()}>
-            체험판 로그인
-          </button>
-          <div>
-            <Link to="/signup">계정이 없으신가요?</Link>
-          </div>
-        </div>
+        <button className="loginButton" onClick={() => this.handleLogin()}>
+          로그인
+        </button>
+        <button className="testButton" onClick={() => this.handleTestLogin()}>
+          체험판 로그인
+        </button>
+        <Link to="/signup" className="signup">
+          계정이 없으신가요?
+        </Link>
       </div>
     );
   }
