@@ -41,7 +41,7 @@ class Signup extends Component {
         alert("회원가입이 완료되지 않았습니다. 다시 시도해 주세요.");
       }
     } catch (err) {
-      alert(err);
+      alert("이미 존재하는 유저입니다.");
     }
   };
 
