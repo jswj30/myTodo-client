@@ -82,20 +82,24 @@ class Login extends Component {
           <h1>MyTodo</h1>
         </div>
         <div className="login_info">
-          <h3>Email</h3>
-          <input
-            type="text"
-            placeholder="Email을 입력하세요."
-            onChange={this.handleInputValue("email")}
-            className="inputEmail"
-          />
-          <h3>Password</h3>
-          <input
-            type="password"
-            placeholder="Password를 입력하세요."
-            onChange={this.handleInputValue("password")}
-            className="inputPassword"
-          />
+          <div className="login_email">
+            <div>Email</div>
+            <input
+              type="text"
+              placeholder="Email을 입력하세요."
+              onChange={this.handleInputValue("email")}
+              className="inputEmail"
+            />
+          </div>
+          <div className="login_password">
+            <div>Password</div>
+            <input
+              type="password"
+              placeholder="Password를 입력하세요."
+              onChange={this.handleInputValue("password")}
+              className="inputPassword"
+            />
+          </div>
         </div>
         <button className="loginButton" onClick={() => this.handleLogin()}>
           로그인
