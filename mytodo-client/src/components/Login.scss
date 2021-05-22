@@ -12,6 +12,7 @@
   margin-right: auto;
   background-color: #4e83dd;
   box-shadow: 7px 7px 25px rgb(128, 128, 128);
+  color: #132b53;
   .title {
     text-align: center;
     background-color: white;
@@ -21,23 +22,31 @@
     margin-left: auto;
     margin-right: auto;
     font-family: "Nanum Gothic Coding", monospace;
-    .inputEmail {
-      width: 220px;
-      height: 20px;
-      border-radius: 5px;
-      font-size: 15px;
-      font-family: "Nanum Gothic Coding", monospace;
+    font-size: 20px;
+    font-weight: bold;
+    .login_email {
+      margin-top: 15px;
+      .inputEmail {
+        width: 220px;
+        height: 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-family: "Nanum Gothic Coding", monospace;
+      }
     }
-    .inputPassword {
-      width: 220px;
-      height: 20px;
-      border-radius: 5px;
-      font-size: 15px;
-      font-family: "Nanum Gothic Coding", monospace;
+    .login_password {
+      margin-top: 15px;
+      .inputPassword {
+        width: 220px;
+        height: 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-family: "Nanum Gothic Coding", monospace;
+      }
     }
   }
   .loginButton {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -46,6 +55,7 @@
     width: 180px;
     height: 30px;
     font-family: "Nanum Gothic Coding", monospace;
+    color: #132b53;
   }
   .testButton {
     margin-top: 20px;
@@ -57,13 +67,15 @@
     width: 180px;
     height: 30px;
     font-family: "Nanum Gothic Coding", monospace;
+    color: #132b53;
   }
   .signup {
     margin-top: 50px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 15px;
-    color: white;
+    color: rgb(171, 231, 241);
     font-family: "Nanum Gothic Coding", monospace;
+    text-shadow: 2px 2px 7px rgb(61, 61, 61);
   }
 }
