@@ -41,6 +41,13 @@ class Main extends Component {
       });
   };
 
+  // Enter 누르면 todo 생성하기
+  onKeyTodo = (e) => {
+    if (e.key === "Enter") {
+      this.handleIputTodo();
+    }
+  };
+
   render() {
     let { todoInfo, handleSignout } = this.props;
     return (
@@ -52,6 +59,7 @@ class Main extends Component {
             placeholder="Todo를 입력해주세요."
             onChange={(e) => this.handleSetStateTodo(e)}
             value={this.state.inputTodo}
+            onKeyPress={this.onKeyTodo}
           />
           <button className="submitTodo" onClick={() => this.handleIputTodo()}>
             등록
