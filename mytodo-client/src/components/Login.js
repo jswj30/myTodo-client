@@ -78,9 +78,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
-        <div className="title">
-          <h1>MyTodo</h1>
-        </div>
+        <div className="signin_title">MyTodo</div>
         <div className="login_info">
           <div className="login_email">
             <div>Email</div>
@@ -107,7 +105,7 @@ class Login extends Component {
         <button className="testButton" onClick={() => this.handleTestLogin()}>
           체험판 로그인
         </button>
-        <Link to="/signup" className="signup">
+        <Link to="/signup" className="signup_click">
           계정이 없으신가요?
         </Link>
       </div>
