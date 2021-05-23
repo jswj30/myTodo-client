@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import TodoList from "./TodoList";
+import "./Main.scss";
 
 // axios
 const axios = require("axios");
