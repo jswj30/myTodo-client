@@ -1,0 +1,62 @@
+.main {
+  box-sizing: border-box;
+  border: 2px solid #2352a2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  // height: 450px;
+  position: relative;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #667fee;
+  box-shadow: 7px 7px 25px rgb(128, 128, 128);
+  color: #132b53;
+  .main_title {
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    padding: 20px;
+    text-align: center;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 45px;
+  }
+  .main_input {
+    display: flex;
+    justify-content: space-between;
+    background-color: #132b53;
+    height: 40px;
+    color: #132b53;
+    .main_inputTodo {
+      width: 85%;
+      font-size: 20px;
+      border: 2px solid #132b53;
+    }
+    .main_inputBtn {
+      width: 15%;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: white;
+      border: 2px solid #132b53;
+      color: #132b53;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+  }
+  .main_todolist {
+  }
+  .main_logout {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+    width: 180px;
+    height: 30px;
+    font-family: "Nanum Gothic Coding", monospace;
+    color: #132b53;
+    font-weight: bold;
+  }
+}
