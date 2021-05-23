@@ -24,6 +24,10 @@ class Main extends Component {
 
   // todo 등록하기
   handleIputTodo = () => {
+    if (this.state.inputTodo === "") {
+      alert("Todo가 공백입니다.");
+      return;
+    }
     if (this.props.userId) {
       return axios
         .post("http://localhost:5000/posttodo", {
@@ -55,25 +59,31 @@ class Main extends Component {
   render() {
     let { todoInfo, handleSignout } = this.props;
     return (
-      <div>
-        <h1>TodoList</h1>
-        <div className="inputTodo">
+      <div className="main">
+        <div className="main_title">MyTodo</div>
+        <div className="main_input">
           <input
             type="text"
             placeholder="Todo를 입력해주세요."
             onChange={(e) => this.handleSetStateTodo(e)}
             value={this.state.inputTodo}
             onKeyPress={this.onKeyTodo}
+            className="main_inputTodo"
           />
-          <button className="submitTodo" onClick={() => this.handleIputTodo()}>
+          <button
+            className="main_inputBtn"
+            onClick={() => this.handleIputTodo()}
+          >
             등록
           </button>
         </div>
-        <div className="todolist">
+        <div className="main_todolist">
           {todoInfo &&
             todoInfo.map((todo, i) => <TodoList todo={todo} key={i} />)}
-          <button onClick={() => handleSignout()}>로그아웃</button>
         </div>
+        <button className="main_logout" onClick={() => handleSignout()}>
+          로그아웃
+        </button>
       </div>
     );
   }
