@@ -1,0 +1,16 @@
+.todolist {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Nanum Gothic Coding", monospace;
+  color: #d9f6ff;
+  // color: #132b53;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #474747;
+  padding: 7px 20px;
+  .deleteIcon {
+    color: #132b53;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
