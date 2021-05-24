@@ -79,7 +79,9 @@ class Main extends Component {
         </div>
         <div className="main_todolist">
           {todoInfo &&
-            todoInfo.map((todo, i) => <TodoList todo={todo} key={i} />)}
+            todoInfo.map((todo, i) => (
+              <TodoList className="todolist" todo={todo} key={i} />
+            ))}
         </div>
         <div className="main_logout">
           <button className="main_logoutBtn" onClick={() => handleSignout()}>

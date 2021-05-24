@@ -1,15 +1,19 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "./TodoList.scss";
+import { MdDeleteForever } from "react-icons/md";
 
 // axios
 const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 const TodoList = ({ todo }) => {
-  const { id, content, startDate } = todo;
+  // const { id, content, startDate } = todo;
+  const { content } = todo;
   return (
-    <div>
-      id: {id} content: {content} startDate: {startDate}
+    <div className="todolist">
+      {content}
+      <MdDeleteForever className="deleteIcon" />
     </div>
   );
 };
