@@ -80,7 +80,12 @@ class Main extends Component {
         <div className="main_todolist">
           {todoInfo &&
             todoInfo.map((todo, i) => (
-              <TodoList className="todolist" todo={todo} key={i} />
+              <TodoList
+                className="todolist"
+                todo={todo}
+                key={i}
+                handleIsLogin={this.props.handleIsLogin}
+              />
             ))}
         </div>
         <div className="main_logout">
