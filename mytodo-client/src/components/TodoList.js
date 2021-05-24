@@ -14,7 +14,6 @@ class TodoList extends Component {
 
   // todo 삭제하기
   handleRemoveTodo = () => {
-    // console.log(this.props.todo);
     const { id } = this.props.todo;
     axios
       .post("http://localhost:5000/removetodo/", {
