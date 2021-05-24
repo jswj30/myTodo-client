@@ -34,7 +34,7 @@ class TodoList extends Component {
     const { content } = this.props.todo;
     return (
       <div className="todolist">
-        {content}
+        <span className="todolist_content">{content}</span>
         <MdDeleteForever
           className="deleteIcon"
           onClick={this.handleRemoveTodo}

@@ -29,7 +29,7 @@ class App extends Component {
     return axios
       .get("http://localhost:5000/gettodo")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.setState({
           isLogin: true,
           todoInfo: res.data,
