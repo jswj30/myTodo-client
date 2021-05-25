@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import TodoList from "./TodoList";
 import "./Main.scss";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // axios
 const axios = require("axios");
@@ -56,42 +57,75 @@ class Main extends Component {
     }
   };
 
+  // 모달 창 실행
+  handleOpenModal = () => {
+    let modal = document.querySelector(".modal");
+    modal.style.display = "block";
+  };
+
+  // 모달 창 닫기
+  handleCloseModal = () => {
+    let modal = document.querySelector(".modal");
+    modal.style.display = "none";
+  };
+
+  // 화면 다른 곳 눌렀을 때 모달 창 닫기
+  handleCloseModalWindow = (event) => {
+    let modal = document.querySelector(".modal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
   render() {
     let { todoInfo, handleSignout } = this.props;
     return (
-      <div className="main">
-        <div className="main_title">MyTodo</div>
-        <div className="main_input">
-          <input
-            type="text"
-            placeholder="Todo를 입력해주세요."
-            onChange={(e) => this.handleSetStateTodo(e)}
-            value={this.state.inputTodo}
-            onKeyPress={this.onKeyTodo}
-            className="main_inputTodo"
-          />
-          <button
-            className="main_inputBtn"
-            onClick={() => this.handleIputTodo()}
-          >
-            등록
-          </button>
+      <div>
+        <div className="modalIcon">
+          <GiHamburgerMenu onClick={this.handleOpenModal} />
         </div>
-        <div className="main_todolist">
-          {todoInfo &&
-            todoInfo.map((todo, i) => (
-              <TodoList
-                className="todolist"
-                todo={todo}
-                key={i}
-                handleIsLogin={this.props.handleIsLogin}
-              />
-            ))}
+        <div className="modal" onClick={this.handleCloseModalWindow}>
+          <div className="mocal_content">
+            <span className="modal_close" onClick={this.handleCloseModal}>
+              &times;
+            </span>
+            <p>Some text in the modal..</p>
+          </div>
         </div>
-        <div className="main_logout">
-          <button className="main_logoutBtn" onClick={() => handleSignout()}>
-            로그아웃
-          </button>
+        <div className="main">
+          <div className="main_title">MyTodo</div>
+          <div className="main_input">
+            <input
+              type="text"
+              placeholder="Todo를 입력해주세요."
+              onChange={(e) => this.handleSetStateTodo(e)}
+              value={this.state.inputTodo}
+              onKeyPress={this.onKeyTodo}
+              className="main_inputTodo"
+            />
+            <button
+              className="main_inputBtn"
+              onClick={() => this.handleIputTodo()}
+            >
+              등록
+            </button>
+          </div>
+          <div className="main_todolist">
+            {todoInfo &&
+              todoInfo.map((todo, i) => (
+                <TodoList
+                  className="todolist"
+                  todo={todo}
+                  key={i}
+                  handleIsLogin={this.props.handleIsLogin}
+                />
+              ))}
+          </div>
+          <div className="main_logout">
+            <button className="main_logoutBtn" onClick={() => handleSignout()}>
+              로그아웃
+            </button>
+          </div>
         </div>
       </div>
     );
