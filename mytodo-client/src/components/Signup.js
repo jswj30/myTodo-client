@@ -23,6 +23,10 @@ class Signup extends Component {
   // 회원가입 버튼
   handleSignup = async () => {
     const { email, password, name, mobile } = this.state;
+    if (!email || !password || !name || !mobile) {
+      alert("모든 정보를 입력해주세요.");
+      return;
+    }
     try {
       const resp = await axios({
         method: "post",
