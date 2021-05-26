@@ -1,6 +1,6 @@
 .signup {
   box-sizing: border-box;
-  border: 2px solid #2352a2;
+  border: 1px solid #888;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@
     text-align: center;
     font-family: "Black Han Sans", sans-serif;
     font-size: 45px;
+    text-shadow: 1px 1px 2px #474747;
   }
   .signup_info {
     margin-top: 15px;
@@ -28,6 +29,8 @@
     font-family: "Nanum Gothic Coding", monospace;
     font-size: 20px;
     font-weight: bold;
+    color: #d9f6ff;
+    text-shadow: 1px 1px 2px #474747;
     .signup_email {
       // margin-top: 10px;
     }

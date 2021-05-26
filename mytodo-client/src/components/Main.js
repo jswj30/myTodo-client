@@ -82,14 +82,22 @@ class Main extends Component {
     return (
       <div>
         <div className="modalIcon">
-          <GiHamburgerMenu onClick={this.handleOpenModal} />
+          <span className="modalIcon_icon">
+            <GiHamburgerMenu onClick={this.handleOpenModal} />
+          </span>
         </div>
         <div className="modal" onClick={this.handleCloseModalWindow}>
-          <div className="mocal_content">
-            <span className="modal_close" onClick={this.handleCloseModal}>
-              &times;
-            </span>
-            <p>Some text in the modal..</p>
+          <div className="modal_content">
+            <div className="modal_header">
+              <span>Menu</span>
+              <span className="modal_close" onClick={this.handleCloseModal}>
+                &times;
+              </span>
+            </div>
+            <div className="modal_body">
+              <span>유저 정보</span>
+              <span>중요 일정</span>
+            </div>
           </div>
         </div>
         <div className="main">
