@@ -1,16 +1,23 @@
 .modalIcon {
   box-sizing: border-box;
-  color: white;
   margin-left: auto;
   margin-right: auto;
   width: 700px;
   height: 22px;
-  font-size: 35px;
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
   padding-top: 10px;
+  color: white;
+  font-size: 35px;
+  text-shadow: 1px 1px 2px #474747;
   cursor: pointer;
+  .modalIcon_icon:hover,
+  .modalIcon_icon:focus {
+    color: #2352a2;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 .modal {
   display: none;
@@ -23,29 +30,60 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  .mocal_content {
+  .modal_content {
+    position: relative;
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
     border: 1px solid #888;
-    width: 80%;
-    .modal_close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+    border-radius: 0px 0px 10px 10px;
+    width: 700px;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+    animation-name: moveTop;
+    animation-duration: 0.4s;
+    .modal_header {
+      padding: 10px 20px;
+      text-align: center;
+      font-family: "Black Han Sans", sans-serif;
+      font-size: 30px;
+      color: #132b53;
+      .modal_close {
+        color: #aaa;
+        float: right;
+        font-size: 40px;
+      }
+      .modal_close:hover,
+      .modal_close:focus {
+        color: #2352a2;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
-    .modal_close:hover,
-    .modal_close:focus {
+    .modal_body {
+      padding: 10px 20px 15px;
+      display: flex;
+      justify-content: space-around;
+      font-family: "Nanum Gothic Coding", monospace;
+      font-size: 18px;
+      font-weight: bold;
       color: #2352a2;
-      text-decoration: none;
-      cursor: pointer;
+    }
+  }
+  @keyframes moveTop {
+    from {
+      top: -60px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
     }
   }
 }
 .main {
   box-sizing: border-box;
-  border: 2px solid #2352a2;
+  border: 1px solid #888;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -65,6 +103,7 @@
     text-align: center;
     font-family: "Black Han Sans", sans-serif;
     font-size: 45px;
+    text-shadow: 1px 1px 2px #474747;
   }
   .main_input {
     display: flex;
@@ -75,7 +114,7 @@
     .main_inputTodo {
       width: 85%;
       font-size: 20px;
-      border: 2px solid #132b53;
+      border: 1px solid #888;
     }
     .main_inputBtn {
       width: 15%;
@@ -83,7 +122,7 @@
       font-weight: bold;
       cursor: pointer;
       background-color: white;
-      border: 2px solid #132b53;
+      border: 1px solid #888;
       color: #132b53;
       text-align: center;
       letter-spacing: 3px;
