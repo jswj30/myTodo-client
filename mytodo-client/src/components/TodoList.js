@@ -30,7 +30,6 @@ class TodoList extends Component {
   };
 
   render() {
-    // const { id, content, startDate } = todo;
     const { content } = this.props.todo;
     return (
       <div className="todolist">

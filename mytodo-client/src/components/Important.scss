@@ -1,0 +1,44 @@
+.important {
+  box-sizing: border-box;
+  border: 1px solid #888;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  // height: 450px;
+  position: relative;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #667fee;
+  box-shadow: 7px 7px 25px rgb(128, 128, 128);
+  color: #132b53;
+  .important_title {
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    padding: 20px;
+    text-align: center;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 45px;
+    text-shadow: 1px 1px 2px #474747;
+  }
+  .important_todolist {
+  }
+  .important_logout {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .important_logoutBtn {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      font-family: "Nanum Gothic Coding", monospace;
+      color: #132b53;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+}
