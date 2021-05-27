@@ -7,9 +7,9 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class ImportantTodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const { id, content, startDate } = this.props.todo;

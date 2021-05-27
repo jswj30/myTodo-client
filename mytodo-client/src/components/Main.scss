@@ -68,6 +68,13 @@
       font-size: 18px;
       font-weight: bold;
       color: #2352a2;
+      .modal_body_important {
+        cursor: pointer;
+      }
+      .modal_body_important:hover,
+      .modal_body_important:focus {
+        color: #132b53;
+      }
     }
   }
   @keyframes moveTop {

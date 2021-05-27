@@ -8,9 +8,9 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class TodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   // todo 삭제하기
   handleRemoveTodo = () => {

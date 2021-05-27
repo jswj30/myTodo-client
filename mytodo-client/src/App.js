@@ -5,6 +5,7 @@ import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Login from "./components/Login";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
+import Important from "./components/Important";
 
 // axios
 const axios = require("axios");
@@ -15,6 +16,7 @@ class App extends Component {
     super(props);
     this.state = {
       isLogin: false,
+      isImportant: false,
       userInfo: null,
       todoInfo: null,
     };
@@ -65,8 +67,16 @@ class App extends Component {
     });
   };
 
+  // 중요 일정 페이지 열기
+  handleIsImportant = () => {
+    this.setState({
+      isImportant: true,
+    });
+    this.props.history.push("/");
+  };
+
   render() {
-    const { isLogin, userId, todoInfo } = this.state;
+    const { isLogin, isImportant, userId, todoInfo } = this.state;
 
     return (
       <div>
@@ -89,14 +99,20 @@ class App extends Component {
                 userId={userId}
                 handleIsLogin={this.handleIsLogin}
                 handleSignout={this.handleSignout}
+                handleIsImportant={this.handleIsImportant}
               />
             )}
           />
+          <Route path="/important" render={() => <Important />} />
           <Route
             path="/"
             render={() => {
               if (isLogin) {
-                return <Redirect to="/main" />;
+                if (isImportant) {
+                  return <Redirect to="/important" />;
+                } else {
+                  return <Redirect to="/main" />;
+                }
               }
               return <Redirect to="/login" />;
             }}

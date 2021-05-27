@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Route, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import TodoList from "./TodoList";
 import "./Main.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
+
+// components
+import Important from "./Important";
 
 // axios
 const axios = require("axios");
@@ -96,7 +99,12 @@ class Main extends Component {
             </div>
             <div className="modal_body">
               <span>유저 정보</span>
-              <span>중요 일정</span>
+              <span
+                className="modal_body_important"
+                onClick={this.props.handleIsImportant}
+              >
+                중요 일정
+              </span>
             </div>
           </div>
         </div>
@@ -135,9 +143,10 @@ class Main extends Component {
             </button>
           </div>
         </div>
+        <Route path="/main/important" render={() => <Important />} />
       </div>
     );
   }
 }
 
-export default withRouter(Main);
+export default Main;
