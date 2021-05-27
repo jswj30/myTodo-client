@@ -12,10 +12,10 @@ class ImportantTodoList extends Component {
   // }
 
   render() {
-    const { id, content, startDate } = this.props.todo;
+    const { content } = this.props.todo;
     return (
       <div className="important_todolist">
-        id: {id} content: {content} startDate: {startDate}
+        <span className="important_todolist_content">{content}</span>
       </div>
     );
   }

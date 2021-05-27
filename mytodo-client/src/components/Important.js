@@ -25,8 +25,10 @@ class Important extends Component {
       ],
     };
   }
+
   render() {
-    const { importantTodo } = this.state;
+    let { importantTodo } = this.state;
+    let { handleSignout } = this.props;
     return (
       <div className="important">
         <div className="important_title">MyTodo</div>
@@ -35,6 +37,14 @@ class Important extends Component {
             importantTodo.map((todo, i) => (
               <ImportantTodoList className="imp_todolist" todo={todo} key={i} />
             ))}
+        </div>
+        <div className="important_logout">
+          <button
+            className="important_logoutBtn"
+            onClick={() => handleSignout()}
+          >
+            로그아웃
+          </button>
         </div>
       </div>
     );

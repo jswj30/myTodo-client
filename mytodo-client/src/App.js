@@ -60,6 +60,8 @@ class App extends Component {
     return axios.post("http://localhost:5000/signout/").then((result) => {
       this.setState({
         isLogin: false,
+        isImportant: false,
+        userInfo: null,
         todoInfo: null,
       });
       // alert(result.data);
@@ -103,7 +105,10 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/important" render={() => <Important />} />
+          <Route
+            path="/important"
+            render={() => <Important handleSignout={this.handleSignout} />}
+          />
           <Route
             path="/"
             render={() => {

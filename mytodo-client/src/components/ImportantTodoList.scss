@@ -1,0 +1,14 @@
+.important_todolist {
+  // display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  font-family: "Nanum Gothic Coding", monospace;
+  color: #d9f6ff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #474747;
+  padding: 7px 10px;
+  .important_todolist_content {
+    width: 90%;
+  }
+}
