@@ -19,6 +19,7 @@ class App extends Component {
       isImportant: false,
       userInfo: null,
       todoInfo: null,
+      importantInfo: null,
     };
   }
 
@@ -28,7 +29,8 @@ class App extends Component {
 
   // 로그인 후 todo 정보 받아오기
   handleIsLogin = () => {
-    return axios
+    // return
+    axios
       .get("http://localhost:5000/gettodo")
       .then((res) => {
         // console.log(res);
@@ -61,20 +63,24 @@ class App extends Component {
       this.setState({
         isLogin: false,
         isImportant: false,
-        userInfo: null,
+        userId: null,
         todoInfo: null,
+        importantInfo: null,
       });
       // alert(result.data);
       this.props.history.push("/");
     });
   };
 
-  // 중요 일정 페이지 열기
+  // 중요 일정 가져오기 + 중요 일정 페이지 열기
   handleIsImportant = () => {
-    this.setState({
-      isImportant: true,
+    axios.get("http://localhost:5000/importanttodo").then((result) => {
+      this.setState({
+        importantInfo: result.data,
+        isImportant: true,
+      });
+      this.props.history.push("/");
     });
-    this.props.history.push("/");
   };
 
   // this.state.isImportant 끄기
@@ -85,7 +91,8 @@ class App extends Component {
   };
 
   render() {
-    const { isLogin, isImportant, userId, todoInfo } = this.state;
+    const { isLogin, isImportant, userId, todoInfo, importantInfo } =
+      this.state;
 
     return (
       <div>
@@ -118,6 +125,7 @@ class App extends Component {
               <Important
                 handleStopIsImportant={this.handleStopIsImportant}
                 handleSignout={this.handleSignout}
+                importantInfo={importantInfo}
               />
             )}
           />
