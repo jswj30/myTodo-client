@@ -29,6 +29,18 @@
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    .important_goBackBtn {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      font-family: "Nanum Gothic Coding", monospace;
+      color: #132b53;
+      font-weight: bold;
+      font-size: 15px;
+      margin-right: 5px;
+    }
     .important_logoutBtn {
       cursor: pointer;
       background-color: white;
@@ -39,6 +51,7 @@
       color: #132b53;
       font-weight: bold;
       font-size: 15px;
+      margin-left: 5px;
     }
   }
 }
