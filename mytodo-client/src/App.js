@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Important from "./components/Important";
+import MyPage from "./components/MyPage";
 
 // axios
 const axios = require("axios");
@@ -17,7 +18,8 @@ class App extends Component {
     this.state = {
       isLogin: false,
       isImportant: false,
-      userInfo: null,
+      isMyPage: false,
+      userId: null,
       todoInfo: null,
       importantInfo: null,
     };
@@ -63,6 +65,7 @@ class App extends Component {
       this.setState({
         isLogin: false,
         isImportant: false,
+        isMyPage: false,
         userId: null,
         todoInfo: null,
         importantInfo: null,
@@ -78,6 +81,7 @@ class App extends Component {
       this.setState({
         importantInfo: result.data,
         isImportant: true,
+        isMyPage: false,
       });
       this.props.history.push("/");
     });
@@ -86,12 +90,22 @@ class App extends Component {
   // this.state.isImportant 끄기
   handleStopIsImportant = () => {
     this.setState({
+      importantInfo: null,
       isImportant: false,
     });
   };
 
+  // 회원 정보 페이지 열기
+  handleIsMyPage = () => {
+    this.setState({
+      isImportant: false,
+      isMyPage: true,
+    });
+    this.props.history.push("/");
+  };
+
   render() {
-    const { isLogin, isImportant, userId, todoInfo, importantInfo } =
+    const { isLogin, isImportant, isMyPage, userId, todoInfo, importantInfo } =
       this.state;
 
     return (
@@ -116,6 +130,7 @@ class App extends Component {
                 handleIsLogin={this.handleIsLogin}
                 handleSignout={this.handleSignout}
                 handleIsImportant={this.handleIsImportant}
+                handleIsMyPage={this.handleIsMyPage}
               />
             )}
           />
@@ -129,12 +144,15 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/mypage" render={() => <MyPage />} />
           <Route
             path="/"
             render={() => {
               if (isLogin) {
                 if (isImportant) {
                   return <Redirect to="/important" />;
+                } else if (isMyPage) {
+                  return <Redirect to="/mypage" />;
                 } else {
                   return <Redirect to="/main" />;
                 }

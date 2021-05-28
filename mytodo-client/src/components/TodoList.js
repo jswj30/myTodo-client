@@ -9,10 +9,6 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class TodoList extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   // 중요 체크하기
   handleImportant = () => {
     const { id } = this.props.todo;

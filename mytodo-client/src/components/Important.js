@@ -8,13 +8,6 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class Important extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     importantTodo: null,
-  //   };
-  // }
-
   // 뒤로 가기 기능
   handleGoBack = () => {
     this.props.handleStopIsImportant();

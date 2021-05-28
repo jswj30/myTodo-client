@@ -98,7 +98,7 @@ class Main extends Component {
               </span>
             </div>
             <div className="modal_body">
-              <span>유저 정보</span>
+              <span onClick={this.props.handleIsMyPage}>회원 정보</span>
               <span
                 className="modal_body_important"
                 onClick={this.props.handleIsImportant}
