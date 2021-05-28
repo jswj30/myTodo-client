@@ -9,18 +9,24 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class TodoList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      important: false,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   // 중요 체크하기
   handleImportant = () => {
-    this.setState({
-      important: !this.state.important,
-    });
+    const { id } = this.props.todo;
+    axios
+      .patch("http://localhost:5000/important", {
+        id,
+      })
+      .then((result) => {
+        // alert("중요 표시가 변경되었습니다.");
+        this.props.handleIsLogin();
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   // todo 삭제하기
@@ -31,7 +37,6 @@ class TodoList extends Component {
         id,
       })
       .then((result) => {
-        console.log("result: ", result);
         alert("Todo가 삭제되었습니다.");
         this.props.handleIsLogin();
       })
@@ -41,8 +46,7 @@ class TodoList extends Component {
   };
 
   render() {
-    const { content } = this.props.todo;
-    const { important } = this.state;
+    const { content, important } = this.props.todo;
     return (
       <div className="todolist">
         <span className="todolist_checkbox" onClick={this.handleImportant}>
