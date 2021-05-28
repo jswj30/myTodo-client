@@ -28,6 +28,7 @@ class Important extends Component {
 
   // 뒤로 가기 기능
   handleGoBack = () => {
+    this.props.handleStopIsImportant();
     this.props.history.goBack();
   };
 

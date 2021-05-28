@@ -77,6 +77,13 @@ class App extends Component {
     this.props.history.push("/");
   };
 
+  // this.state.isImportant 끄기
+  handleStopIsImportant = () => {
+    this.setState({
+      isImportant: false,
+    });
+  };
+
   render() {
     const { isLogin, isImportant, userId, todoInfo } = this.state;
 
@@ -107,7 +114,12 @@ class App extends Component {
           />
           <Route
             path="/important"
-            render={() => <Important handleSignout={this.handleSignout} />}
+            render={() => (
+              <Important
+                handleStopIsImportant={this.handleStopIsImportant}
+                handleSignout={this.handleSignout}
+              />
+            )}
           />
           <Route
             path="/"
