@@ -8,23 +8,12 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 class Important extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      importantTodo: [
-        {
-          id: 3,
-          content: "장보기",
-          startDate: "2021-2-24 19:11:57",
-        },
-        {
-          id: 5,
-          content: "여행 일정 짜기",
-          startDate: "2021-2-24 19:12:23",
-        },
-      ],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     importantTodo: null,
+  //   };
+  // }
 
   // 뒤로 가기 기능
   handleGoBack = () => {
@@ -33,14 +22,14 @@ class Important extends Component {
   };
 
   render() {
-    let { importantTodo } = this.state;
-    let { handleSignout } = this.props;
+    // let { importantTodo } = this.state;
+    let { handleSignout, importantInfo } = this.props;
     return (
       <div className="important">
         <div className="important_title">MyTodo</div>
         <div className="important_todolist">
-          {importantTodo &&
-            importantTodo.map((todo, i) => (
+          {importantInfo &&
+            importantInfo.map((todo, i) => (
               <ImportantTodoList className="imp_todolist" todo={todo} key={i} />
             ))}
         </div>
