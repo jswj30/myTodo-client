@@ -26,6 +26,11 @@ class Important extends Component {
     };
   }
 
+  // 뒤로 가기 기능
+  handleGoBack = () => {
+    this.props.history.goBack();
+  };
+
   render() {
     let { importantTodo } = this.state;
     let { handleSignout } = this.props;
@@ -39,6 +44,12 @@ class Important extends Component {
             ))}
         </div>
         <div className="important_logout">
+          <button
+            className="important_goBackBtn"
+            onClick={() => this.handleGoBack()}
+          >
+            뒤로가기
+          </button>
           <button
             className="important_logoutBtn"
             onClick={() => handleSignout()}
