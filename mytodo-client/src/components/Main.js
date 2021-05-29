@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 // components
 import Important from "./Important";
+import Password from "./Password";
 
 // axios
 const axios = require("axios");
@@ -60,6 +61,27 @@ class Main extends Component {
     }
   };
 
+  // 비밀번호 확인 모달 창 실행
+  handleOpenPassword = () => {
+    let modal = document.querySelector(".password");
+    modal.style.display = "block";
+  };
+
+  // 비밀번호 확인 모달 창 닫기
+  handleClosePassword = () => {
+    let modal = document.querySelector(".password");
+    modal.style.display = "none";
+  };
+
+  // 화면 다른 곳 눌렀을 때 비밀번호 확인 모달 창 닫기
+  handleClosePasswordWindow = (event) => {
+    let modal = document.querySelector(".password");
+    if (event.target === modal) {
+      modal.style.display = "none";
+      this.handleCloseModal();
+    }
+  };
+
   // 모달 창 실행
   handleOpenModal = () => {
     let modal = document.querySelector(".modal");
@@ -84,6 +106,9 @@ class Main extends Component {
     let { todoInfo, handleSignout } = this.props;
     return (
       <div>
+        <div className="password" onClick={this.handleClosePasswordWindow}>
+          <Password />
+        </div>
         <div className="modalIcon">
           <span className="modalIcon_icon">
             <GiHamburgerMenu onClick={this.handleOpenModal} />
@@ -98,7 +123,12 @@ class Main extends Component {
               </span>
             </div>
             <div className="modal_body">
-              <span onClick={this.props.handleIsMyPage}>회원 정보</span>
+              <span
+                className="modal_body_userInfo"
+                onClick={this.handleOpenPassword}
+              >
+                회원 정보
+              </span>
               <span
                 className="modal_body_important"
                 onClick={this.props.handleIsImportant}

@@ -1,3 +1,15 @@
+.password {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .modalIcon {
   box-sizing: border-box;
   margin-left: auto;
@@ -68,8 +80,15 @@
       font-size: 18px;
       font-weight: bold;
       color: #2352a2;
+      .modal_body_userInfo {
+        cursor: pointer;
+      }
       .modal_body_important {
         cursor: pointer;
+      }
+      .modal_body_userInfo:hover,
+      .modal_body_userInfo:focus {
+        color: #132b53;
       }
       .modal_body_important:hover,
       .modal_body_important:focus {
