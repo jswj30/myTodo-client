@@ -71,6 +71,7 @@ class Main extends Component {
   handleClosePassword = () => {
     let modal = document.querySelector(".password");
     modal.style.display = "none";
+    this.handleCloseModal();
   };
 
   // 화면 다른 곳 눌렀을 때 비밀번호 확인 모달 창 닫기
@@ -107,7 +108,7 @@ class Main extends Component {
     return (
       <div>
         <div className="password" onClick={this.handleClosePasswordWindow}>
-          <Password />
+          <Password handleClosePassword={this.handleClosePassword} />
         </div>
         <div className="modalIcon">
           <span className="modalIcon_icon">
