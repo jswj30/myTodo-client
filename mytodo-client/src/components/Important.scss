@@ -30,28 +30,26 @@
     margin-top: 20px;
     margin-bottom: 20px;
     .important_goBackBtn {
+      margin-right: 5px;
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
       font-size: 15px;
-      margin-right: 5px;
     }
     .important_logoutBtn {
+      margin-left: 5px;
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
       font-size: 15px;
-      margin-left: 5px;
     }
   }
 }

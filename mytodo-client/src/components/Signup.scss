@@ -57,23 +57,25 @@
     margin-right: auto;
     .signupButton {
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
+      letter-spacing: 0.5px;
+      font-size: 15px;
     }
     .goBackButton {
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 15px;
     }
   }
 }

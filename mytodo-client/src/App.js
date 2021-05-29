@@ -22,6 +22,7 @@ class App extends Component {
       userId: null,
       todoInfo: null,
       importantInfo: null,
+      userInfo: null,
     };
   }
 
@@ -61,18 +62,28 @@ class App extends Component {
 
   // 로그아웃 기능
   handleSignout = () => {
-    return axios.post("http://localhost:5000/signout/").then((result) => {
-      this.setState({
-        isLogin: false,
-        isImportant: false,
-        isMyPage: false,
-        userId: null,
-        todoInfo: null,
-        importantInfo: null,
+    return axios
+      .post("http://localhost:5000/signout/")
+      .then((result) => {
+        this.setState({
+          isLogin: false,
+          isImportant: false,
+          isMyPage: false,
+          userId: null,
+          todoInfo: null,
+          importantInfo: null,
+          userInfo: {
+            email: "",
+            password: "",
+            name: "",
+            mobile: "",
+          },
+        });
+        this.props.history.push("/");
+      })
+      .catch((err) => {
+        alert("로그아웃되지 않았습니다.");
       });
-      // alert(result.data);
-      this.props.history.push("/");
-    });
   };
 
   // 중요 일정 가져오기 + 중요 일정 페이지 열기
@@ -90,23 +101,39 @@ class App extends Component {
   // this.state.isImportant 끄기
   handleStopIsImportant = () => {
     this.setState({
-      importantInfo: null,
       isImportant: false,
+      importantInfo: null,
     });
   };
 
-  // 회원 정보 페이지 열기
-  handleIsMyPage = () => {
+  // MyPage 열기
+  handleIsMyPage = (e) => {
     this.setState({
       isImportant: false,
       isMyPage: true,
+      userInfo: e.data,
     });
     this.props.history.push("/");
   };
 
+  // this.state.isMyPage 끄기
+  handleStopIsMyPage = () => {
+    this.setState({
+      isMyPage: false,
+      userInfo: null,
+    });
+  };
+
   render() {
-    const { isLogin, isImportant, isMyPage, userId, todoInfo, importantInfo } =
-      this.state;
+    const {
+      isLogin,
+      isImportant,
+      isMyPage,
+      userId,
+      todoInfo,
+      importantInfo,
+      userInfo,
+    } = this.state;
 
     return (
       <div>
@@ -144,7 +171,16 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/mypage" render={() => <MyPage />} />
+          <Route
+            path="/mypage"
+            render={() => (
+              <MyPage
+                userInfo={userInfo}
+                handleStopIsMyPage={this.handleStopIsMyPage}
+                handleSignout={this.handleSignout}
+              />
+            )}
+          />
           <Route
             path="/"
             render={() => {

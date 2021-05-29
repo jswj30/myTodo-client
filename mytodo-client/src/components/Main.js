@@ -104,11 +104,15 @@ class Main extends Component {
   };
 
   render() {
-    let { todoInfo, handleSignout } = this.props;
+    let { todoInfo, handleSignout, handleIsMyPage, userId } = this.props;
     return (
       <div>
         <div className="password" onClick={this.handleClosePasswordWindow}>
-          <Password handleClosePassword={this.handleClosePassword} />
+          <Password
+            handleClosePassword={this.handleClosePassword}
+            handleIsMyPage={handleIsMyPage}
+            userId={userId}
+          />
         </div>
         <div className="modalIcon">
           <span className="modalIcon_icon">
