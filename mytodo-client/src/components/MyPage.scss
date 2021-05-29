@@ -26,22 +26,28 @@
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
+    width: 220px;
+    height: 260px;
     font-family: "Nanum Gothic Coding", monospace;
     font-size: 20px;
     font-weight: bold;
     color: #d9f6ff;
     text-shadow: 1px 1px 2px #474747;
+    .myPage_text {
+      color: #132b53;
+      font-weight: normal;
+    }
     .myPage_editBtn {
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
       width: 45px;
-      height: 28px;
+      height: 25px;
+      margin-top: 4px;
+      cursor: pointer;
+      border: 1px solid #888;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
+      font-size: 12px;
       font-weight: bold;
-      font-size: 13px;
-      margin-left: 5px;
     }
     .myPage_email {
       display: flex;
@@ -62,8 +68,8 @@
       justify-content: space-between;
       margin-top: 5px;
     }
-    .inputmyPage {
-      width: 220px;
+    .inputMyPage {
+      width: 212px;
       height: 20px;
       border-radius: 5px;
       font-size: 15px;
@@ -71,32 +77,30 @@
     }
   }
   .myPage_btns {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     .myPage_goBackBtn {
+      margin-left: 5px;
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
       font-size: 15px;
-      margin-right: 5px;
     }
     .myPage_logoutBtn {
+      margin-left: 5px;
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
       color: #132b53;
       font-weight: bold;
       font-size: 15px;
-      margin-left: 5px;
     }
   }
 }

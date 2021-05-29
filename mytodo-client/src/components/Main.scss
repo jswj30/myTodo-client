@@ -64,6 +64,9 @@
         color: #aaa;
         float: right;
         font-size: 40px;
+        position: absolute;
+        top: 7px;
+        right: 20px;
       }
       .modal_close:hover,
       .modal_close:focus {
@@ -143,15 +146,15 @@
       border: 1px solid #888;
     }
     .main_inputBtn {
-      width: 15%;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      background-color: white;
       border: 1px solid #888;
-      color: #132b53;
       text-align: center;
       letter-spacing: 3px;
+      cursor: pointer;
+      width: 15%;
+      font-family: "Nanum Gothic Coding", monospace;
+      color: #132b53;
+      font-weight: bold;
+      font-size: 20px;
     }
   }
   .main_todolist {
@@ -163,8 +166,7 @@
     margin-bottom: 20px;
     .main_logoutBtn {
       cursor: pointer;
-      background-color: white;
-      border-radius: 5px;
+      border: 1px solid #888;
       width: 100px;
       height: 30px;
       font-family: "Nanum Gothic Coding", monospace;
