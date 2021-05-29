@@ -9,7 +9,15 @@ class Password extends Component {
   render() {
     return (
       <div className="password_content">
-        <div className="password_header">비밀번호를 확인합니다.</div>
+        <div className="password_header">
+          <span>비밀번호를 확인합니다.</span>
+          <span
+            className="password_close"
+            onClick={this.props.handleClosePassword}
+          >
+            &times;
+          </span>
+        </div>
         <input
           className="password_input"
           type="password"
