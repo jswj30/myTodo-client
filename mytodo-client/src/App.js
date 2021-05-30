@@ -39,17 +39,17 @@ class App extends Component {
         // console.log(res);
         this.setState({
           isLogin: true,
+          isImportant: false,
+          isMyPage: false,
           todoInfo: res.data,
         });
         this.props.history.push("/");
       })
       .catch((err) => {
-        if (err.response.status === 401) {
-          this.setState({
-            isLogin: false,
-          });
-          this.props.history.push("/");
-        }
+        this.setState({
+          isLogin: false,
+        });
+        this.props.history.push("/");
       });
   };
 
@@ -176,8 +176,10 @@ class App extends Component {
             render={() => (
               <MyPage
                 userInfo={userInfo}
+                userId={userId}
                 handleStopIsMyPage={this.handleStopIsMyPage}
                 handleSignout={this.handleSignout}
+                handleIsMyPage={this.handleIsMyPage}
               />
             )}
           />
