@@ -77,17 +77,17 @@
     }
   }
   .myPage_btns {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: "Nanum Gothic Coding", monospace;
+    color: #132b53;
     .myPage_goBackBtn {
       margin-left: 5px;
       cursor: pointer;
       border: 1px solid #888;
       width: 100px;
       height: 30px;
-      font-family: "Nanum Gothic Coding", monospace;
-      color: #132b53;
       font-weight: bold;
       font-size: 15px;
     }
@@ -97,10 +97,18 @@
       border: 1px solid #888;
       width: 100px;
       height: 30px;
-      font-family: "Nanum Gothic Coding", monospace;
-      color: #132b53;
       font-weight: bold;
       font-size: 15px;
+    }
+    .myPage_deleteUser {
+      text-align: center;
+      margin-top: 8px;
+      .myPage_deleteUserBtn {
+        cursor: pointer;
+        font-size: 13px;
+        // font-weight: bold;
+        color: #d9f6ff;
+      }
     }
   }
 }
