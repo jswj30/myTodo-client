@@ -136,7 +136,10 @@ class MyPage extends Component {
     });
   };
 
-  //
+  // 회원 탈퇴
+  handleDeleteUser = () => {
+    alert("회원 탈퇴 버튼");
+  };
 
   render() {
     let { userInfo, handleSignout } = this.props;
@@ -242,6 +245,14 @@ class MyPage extends Component {
           <button className="myPage_logoutBtn" onClick={handleSignout}>
             로그아웃
           </button>
+          <div className="myPage_deleteUser">
+            <span
+              className="myPage_deleteUserBtn"
+              onClick={this.handleDeleteUser}
+            >
+              회원 탈퇴
+            </span>
+          </div>
         </div>
       </div>
     );
