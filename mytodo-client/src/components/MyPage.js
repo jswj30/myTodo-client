@@ -136,6 +136,21 @@ class MyPage extends Component {
     });
   };
 
+  // 회원 탈퇴 모달 오픈
+  handleOpenDeleteUserModal = () => {
+    alert("회원 탈퇴 모달 오픈");
+  };
+
+  // 모달 밖을 눌렀을 때 회원 탈퇴 모달 클로즈
+  handleCloseDeleteUserModalWindow = () => {
+    alert("회원 모달 닫기");
+  };
+
+  // 회원 탈퇴 모달 클로즈
+  handleCloseDeleteUserModal = () => {
+    alert("회원 모달 닫기");
+  };
+
   // 회원 탈퇴
   handleDeleteUser = () => {
     alert("회원 탈퇴 버튼");
@@ -146,6 +161,37 @@ class MyPage extends Component {
     let { editPW, editName, editMobile } = this.state;
     return (
       <div className="myPage">
+        <div
+          className="myPage_modal"
+          onClick={this.handleCloseDeleteUserModalWindow}
+        >
+          <div className="myPage_modal_content">
+            <div className="myPage_modal_header">
+              <span>회원 탈퇴</span>
+              <span
+                className="myPage_modal_close"
+                onClick={this.handleCloseDeleteUserModal}
+              >
+                &times;
+              </span>
+            </div>
+            <div className="myPage_modal_body">정말 탈퇴하시겠습니까?</div>
+            <div className="myPage_modal_btns">
+              <button
+                className="myPage_modal_yesBtn"
+                onClick={this.handleDeleteUser}
+              >
+                네
+              </button>
+              <button
+                className="myPage_modal_noBtn"
+                onClick={this.handleCloseDeleteUserModal}
+              >
+                아니오
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="myPage_title">MyTodo</div>
         <div className="myPage_info">
           <div className="myPage_email">Email</div>
@@ -248,7 +294,7 @@ class MyPage extends Component {
           <div className="myPage_deleteUser">
             <span
               className="myPage_deleteUserBtn"
-              onClick={this.handleDeleteUser}
+              onClick={this.handleOpenDeleteUserModal}
             >
               회원 탈퇴
             </span>

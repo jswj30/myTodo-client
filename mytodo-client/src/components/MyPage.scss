@@ -13,6 +13,90 @@
   background-color: #667fee;
   box-shadow: 7px 7px 25px rgb(128, 128, 128);
   color: #132b53;
+  .myPage_modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    .myPage_modal_content {
+      position: relative;
+      background-color: #fefefe;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0px;
+      border: 1px solid #888;
+      border-radius: 10px 10px 10px 10px;
+      width: 600px;
+      height: 200px;
+      top: 220px;
+      box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+      .myPage_modal_header {
+        padding: 10px 20px;
+        text-align: center;
+        font-family: "Black Han Sans", sans-serif;
+        font-size: 30px;
+        color: #132b53;
+        .myPage_modal_close {
+          color: #aaa;
+          float: right;
+          font-size: 40px;
+          position: absolute;
+          top: 7px;
+          right: 20px;
+        }
+        .myPage_modal_close:hover,
+        .myPage_modal_close:focus {
+          color: #2352a2;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+      .myPage_modal_body {
+        padding: 10px 20px 15px;
+        display: flex;
+        justify-content: space-around;
+        font-family: "Nanum Gothic Coding", monospace;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2352a2;
+      }
+      .myPage_modal_btns {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        .myPage_modal_yesBtn {
+          cursor: pointer;
+          border: 1px solid #888;
+          width: 100px;
+          height: 30px;
+          margin-right: 3px;
+          font-family: "Nanum Gothic Coding", monospace;
+          color: #132b53;
+          font-weight: bold;
+          font-size: 15px;
+        }
+        .myPage_modal_noBtn {
+          cursor: pointer;
+          border: 1px solid #888;
+          width: 100px;
+          height: 30px;
+          margin-left: 3px;
+          font-family: "Nanum Gothic Coding", monospace;
+          color: #132b53;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+    }
+  }
   .myPage_title {
     background-color: white;
     border-radius: 8px 8px 0px 0px;
