@@ -138,17 +138,22 @@ class MyPage extends Component {
 
   // 회원 탈퇴 모달 오픈
   handleOpenDeleteUserModal = () => {
-    alert("회원 탈퇴 모달 오픈");
+    let modal = document.querySelector(".myPage_modal");
+    modal.style.display = "block";
   };
 
   // 모달 밖을 눌렀을 때 회원 탈퇴 모달 클로즈
-  handleCloseDeleteUserModalWindow = () => {
-    alert("회원 모달 닫기");
+  handleCloseDeleteUserModalWindow = (e) => {
+    let modal = document.querySelector(".myPage_modal");
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
   };
 
   // 회원 탈퇴 모달 클로즈
   handleCloseDeleteUserModal = () => {
-    alert("회원 모달 닫기");
+    let modal = document.querySelector(".myPage_modal");
+    modal.style.display = "none";
   };
 
   // 회원 탈퇴
