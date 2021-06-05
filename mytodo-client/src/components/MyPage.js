@@ -42,6 +42,7 @@ class MyPage extends Component {
           inputName: result.data.name,
           inputMobile: result.data.mobile,
         });
+        alert("Password가 수정되었습니다.");
         this.props.handleIsMyPage(result);
       })
       .catch((err) => {
@@ -72,6 +73,7 @@ class MyPage extends Component {
           inputName: result.data.name,
           inputMobile: result.data.mobile,
         });
+        alert("Name이 수정되었습니다.");
         this.props.handleIsMyPage(result);
       })
       .catch((err) => {
@@ -102,6 +104,7 @@ class MyPage extends Component {
           inputName: result.data.name,
           inputMobile: result.data.mobile,
         });
+        alert("Mobile이 수정되었습니다.");
         this.props.handleIsMyPage(result);
       })
       .catch((err) => {
@@ -136,6 +139,22 @@ class MyPage extends Component {
     });
   };
 
+  // Input에서 Enter를 누르면 완료 버튼이 눌러지도록
+  handleKeyEnter = (e) => {
+    let password = document.querySelector(".inputMyPage_password");
+    let name = document.querySelector(".inputMyPage_name");
+    let mobile = document.querySelector(".inputMyPage_mobile");
+    if (e.key === "Enter") {
+      if ((e.target = password)) {
+        this.handleCloseEditPW();
+      } else if ((e.target = name)) {
+        this.handleCloseEditName();
+      } else if ((e.target = mobile)) {
+        this.handleCloseEditMobile();
+      }
+    }
+  };
+
   // 회원 탈퇴 모달 오픈
   handleOpenDeleteUserModal = () => {
     let modal = document.querySelector(".myPage_modal");
@@ -158,7 +177,18 @@ class MyPage extends Component {
 
   // 회원 탈퇴
   handleDeleteUser = () => {
-    alert("회원 탈퇴 버튼");
+    axios
+      .post("http://localhost:5000/search/deleteuser", {
+        email: this.props.userInfo.email,
+        password: this.props.userInfo.password,
+      })
+      .then((result) => {
+        alert("회원 탈퇴가 완료되었습니다.");
+        this.props.handleSignout();
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   render() {
@@ -221,11 +251,12 @@ class MyPage extends Component {
           </div>
           {editPW ? (
             <input
-              className="inputMyPage"
+              className="inputMyPage_password"
               type="password"
               placeholder="Password을 입력하세요."
               onChange={(e) => this.handleSetStatePW(e)}
               value={this.state.inputPW}
+              onKeyPress={this.handleKeyEnter}
             />
           ) : (
             <div className="myPage_text">**********</div>
@@ -250,11 +281,12 @@ class MyPage extends Component {
           </div>
           {editName ? (
             <input
-              className="inputMyPage"
+              className="inputMyPage_name"
               type="text"
               placeholder="이름을 입력하세요."
               onChange={(e) => this.handleSetStateName(e)}
               value={this.state.inputName}
+              onKeyPress={this.handleKeyEnter}
             />
           ) : (
             <div className="myPage_text">{userInfo.name}</div>
@@ -279,11 +311,12 @@ class MyPage extends Component {
           </div>
           {editMobile ? (
             <input
-              className="inputMyPage"
+              className="inputMyPage_mobile"
               type="text"
               placeholder="전화번호를 입력하세요."
               onChange={(e) => this.handleSetStateMobile(e)}
               value={this.state.inputMobile}
+              onKeyPress={this.handleKeyEnter}
             />
           ) : (
             <div className="myPage_text">{userInfo.mobile}</div>
