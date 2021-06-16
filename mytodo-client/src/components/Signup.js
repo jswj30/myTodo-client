@@ -30,7 +30,7 @@ class Signup extends Component {
     try {
       const resp = await axios({
         method: "post",
-        url: "http://localhost:5000/signup",
+        url: "https://api.js-mytodo.com:5000/signup",
         data: {
           email,
           password,

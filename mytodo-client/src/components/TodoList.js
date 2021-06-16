@@ -13,7 +13,7 @@ class TodoList extends Component {
   handleImportant = () => {
     const { id } = this.props.todo;
     axios
-      .patch("http://localhost:5000/important", {
+      .patch("https://api.js-mytodo.com:5000/important", {
         id,
       })
       .then((result) => {
@@ -29,7 +29,7 @@ class TodoList extends Component {
   handleRemoveTodo = () => {
     const { id } = this.props.todo;
     axios
-      .post("http://localhost:5000/removetodo/", {
+      .post("https://api.js-mytodo.com:5000/removetodo/", {
         id,
       })
       .then((result) => {

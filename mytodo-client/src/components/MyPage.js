@@ -29,7 +29,7 @@ class MyPage extends Component {
   // PW 정보 수정 + PW test로 변환
   handleCloseEditPW = () => {
     axios
-      .patch("http://localhost:5000/edituser", {
+      .patch("https://api.js-mytodo.com:5000/edituser", {
         id: this.props.userId,
         password: this.state.inputPW,
         name: this.state.inputName,
@@ -60,7 +60,7 @@ class MyPage extends Component {
   // Name 정보 수정 + Name test로 변환
   handleCloseEditName = () => {
     axios
-      .patch("http://localhost:5000/edituser", {
+      .patch("https://api.js-mytodo.com:5000/edituser", {
         id: this.props.userId,
         password: this.props.userInfo.password,
         name: this.state.inputName,
@@ -91,7 +91,7 @@ class MyPage extends Component {
   // Mobile 정보 수정 + Name test로 변환
   handleCloseEditMobile = () => {
     axios
-      .patch("http://localhost:5000/edituser", {
+      .patch("https://api.js-mytodo.com:5000/edituser", {
         id: this.props.userId,
         password: this.props.userInfo.password,
         name: this.state.inputName,
@@ -178,7 +178,7 @@ class MyPage extends Component {
   // 회원 탈퇴
   handleDeleteUser = () => {
     axios
-      .post("http://localhost:5000/search/deleteuser", {
+      .post("https://api.js-mytodo.com:5000/search/deleteuser", {
         email: this.props.userInfo.email,
         password: this.props.userInfo.password,
       })
