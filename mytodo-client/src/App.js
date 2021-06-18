@@ -34,7 +34,7 @@ class App extends Component {
   handleIsLogin = () => {
     // return
     axios
-      .get("http://localhost:5000/gettodo")
+      .get("https://api.js-mytodo.com:5000/gettodo")
       .then((res) => {
         // console.log(res);
         this.setState({
@@ -63,7 +63,7 @@ class App extends Component {
   // 로그아웃 기능
   handleSignout = () => {
     return axios
-      .post("http://localhost:5000/signout/")
+      .post("https://api.js-mytodo.com:5000/signout/")
       .then((result) => {
         this.setState({
           isLogin: false,
@@ -88,7 +88,7 @@ class App extends Component {
 
   // 중요 일정 가져오기 + 중요 일정 페이지 열기
   handleIsImportant = () => {
-    axios.get("http://localhost:5000/importanttodo").then((result) => {
+    axios.get("https://api.js-mytodo.com:5000/importanttodo").then((result) => {
       this.setState({
         importantInfo: result.data,
         isImportant: true,

@@ -24,7 +24,7 @@ class Password extends Component {
   // 유저 정보 가져오기 + MyPage 열기
   handleOpenMyPage = () => {
     axios
-      .post("http://localhost:5000/search/mypage", {
+      .post("https://api.js-mytodo.com:5000/search/mypage", {
         id: this.props.userId,
         password: this.state.inputPW,
       })

@@ -35,7 +35,7 @@ class Main extends Component {
     }
     if (this.props.userId) {
       return axios
-        .post("http://localhost:5000/posttodo", {
+        .post("https://api.js-mytodo.com:5000/posttodo", {
           content: this.state.inputTodo,
           userId: this.props.userId,
         })
