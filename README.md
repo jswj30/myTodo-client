@@ -20,10 +20,10 @@
 
 ### Deployment
 
-![S3](http://img.shields.io/badge/S3-red?style=for-the-badge&logo=Amazon AWS)
-![EC2](http://img.shields.io/badge/EC2-232F3E?style=for-the-badge&logo=Amazon AWS)
-![Route53](http://img.shields.io/badge/Route53-28288C?style=for-the-badge&logo=Amazon AWS)
-![CloudFront](http://img.shields.io/badge/CloudFront-FFC314?style=for-the-badge&logo=Amazon AWS)
-![ELB](http://img.shields.io/badge/ELB-FF6A89?style=for-the-badge&logo=Amazon AWS)
+![S3](http://img.shields.io/badge/S3-red?style=for-the-badge&logo=AmazonAWS)
+![EC2](http://img.shields.io/badge/EC2-232F3E?style=for-the-badge&logo=AmazonAWS)
+![Route53](http://img.shields.io/badge/Route53-28288C?style=for-the-badge&logo=AmazonAWS)
+![CloudFront](http://img.shields.io/badge/CloudFront-FFC314?style=for-the-badge&logo=AmazonAWS)
+![ELB](http://img.shields.io/badge/ELB-FF6A89?style=for-the-badge&logo=AmazonAWS)
 
 
