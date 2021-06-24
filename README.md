@@ -26,4 +26,6 @@
 ![CloudFront](http://img.shields.io/badge/CloudFront-FFC314?style=for-the-badge&logo=AmazonAWS)
 ![ELB](http://img.shields.io/badge/ELB-FF6A89?style=for-the-badge&logo=AmazonAWS)
 
+# DB_Schema
 
+![DB_Schema](./image/myTodo_DBSchema.png)
