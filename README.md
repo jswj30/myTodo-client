@@ -29,3 +29,7 @@
 # DB_Schema
 
 ![DB_Schema](./image/myTodo_DBSchema.png)
+
+# Flow Chart
+
+<img src="https://raw.githubusercontent.com/jswj30/myTodo-client/dev/image/myTodo_FlowChart.jpg">
